@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Data;
 
-namespace SampleClass
+namespace SampleClass1
 {
     public class connectionCache
     {

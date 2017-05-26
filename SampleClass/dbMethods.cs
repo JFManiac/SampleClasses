@@ -10,9 +10,11 @@ namespace SampleClass1
     public class dbMethods
     {
         //
+        
 
         public static Boolean dbCreate(ref string dbConnection, ref string dbName)
         {
+            connectionCache dbCache = new connectionCache();
             SQLiteConnection dbConn = new SQLiteConnection();
 
             if (dbConnection == "")
@@ -21,7 +23,9 @@ namespace SampleClass1
                 return false;
             }
 
-            return dbCreate(ref GetDataConnectionFromCache(dbConnection), ref dbName);
+            dbConn = dbCache.GetDataConnectionFromCache(ref dbConnection);
+
+            return dbCreate(ref dbConn, ref dbName);
         }
 
         public static Boolean dbCreate(ref SQLiteConnection dbConnection, ref string dbName)
@@ -47,7 +51,7 @@ namespace SampleClass1
             {
                 command.ExecuteNonQuery();
             }
-            catch
+            catch (Exception ex)
             {
                 throw new Exception("Execute failed!", ex);
                 return false;
