@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SampleClass
+namespace SampleClass1
 {
     public class Sample1
     {
