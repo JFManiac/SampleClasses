@@ -11,7 +11,6 @@ namespace SampleClass1
     {
         //
         
-
         public static Boolean dbCreate(ref string dbConnection, ref string dbName)
         {
             connectionCache dbCache = new connectionCache();
